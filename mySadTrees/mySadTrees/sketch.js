@@ -29,11 +29,15 @@ function mousePressed(){
   }
   count++;
 
-  if(count === 4){
+  if(count >= 5){
     for(i=0; i<tree.length; i++){
+      // let check = rand(0,1);
       if(!tree[i].finished){
         let leaf = tree[i].end.copy();
-        leaves.push(leaf);
+        // if(rand() > 0.5){
+          leaves.push(leaf);
+        // }
+        
       }
     }
   }
@@ -56,7 +60,7 @@ function draw() {
     noStroke();
     ellipse(leaves[i].x, leaves[i].y, 8, 8);
     let rand = random(0,2);
-    if(rand >= 1){
+    if(rand >= 1 && leaves[i].y <= height-4){
       leaves[i].y += rand;
       tree[i].decided = 1;
     }

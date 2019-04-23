@@ -7,8 +7,8 @@ function Branch(begin, end) {
     this.decided = 0;
 
     this.jitter = function() {
-        this.end.x += random(-1, 1);
-        this.end.y += random(-1, 1);
+        this.end.x += random(-0.25, 0.25);
+        this.end.y += random(-0.25, 0.25);
      }
 
     this.show = () => {
